@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    exit 1
+fi
+
+input_file="$1"
+output_file="${input_file%.*}_yp3.avi"
+
+ffmpeg -i "$input_file" -vf "scale=160:128, transpose=2, vflip" -r 16 -pix_fmt yuvj420p -c:v mjpeg -vtag MJPG -q:v 2 -acodec pcm_s16le -ac 2 -ar 22050 "$output_file"
+
+then put it in convert_to_yp3.sh
+
+then run
+
+chmod +x convert_to_yp3.sh
+
+then run
+
+./convert_to_yp3.sh /path/to/your/video.mp4
