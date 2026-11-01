@@ -2,7 +2,7 @@
 
 echo "thanks for using my tool! please subscribe to my channel and please contribute! https://www.youtube.com/@omer5090Ti?app=desktop"
 if [ -z "$1" ]; then
-    echo "Usage: ./convert_and_split.sh <video.mp4>"
+    echo "Usage: ./YP3Convert.sh <video.mp4>"
     exit 1
 fi
 
@@ -20,7 +20,7 @@ mkdir -p "$output_dir"
 
 output_pattern="${output_dir}/%02d.avi"
 
-echo "Converting and splitting '$input_file' into 3-minute chunks..."
+echo "Converting and splitting '$input_file' into 170-Second chunks..."
 
 ffmpeg -i "$input_file" \
     -vf "scale=160:128, transpose=2, vflip" \
