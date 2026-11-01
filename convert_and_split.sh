@@ -8,24 +8,20 @@ fi
 
 input_file="$1"
 
-# Extract filename without path and extension
 filename=$(basename -- "$input_file")
 base_name="${filename%.*}"
 output_dir="$base_name"
 
-# Remove old folder if it already exists, then create a fresh one
 if [ -d "$output_dir" ]; then
     echo "Removing old folder: '$output_dir/'"
     rm -rf "$output_dir"
 fi
 mkdir -p "$output_dir"
 
-# Define output pattern (e.g., folder_name/01.avi, folder_name/02.avi)
 output_pattern="${output_dir}/%02d.avi"
 
 echo "Converting and splitting '$input_file' into 3-minute chunks..."
 
-# Run your custom FFmpeg command with the segment muxer
 ffmpeg -i "$input_file" \
     -vf "scale=160:128, transpose=2, vflip" \
     -r 16 \
