@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Check if an input file was provided
+echo "thanks for using my tool! please subscribe to my channel and please contribute! https://www.youtube.com/@omer5090Ti?app=desktop"
 if [ -z "$1" ]; then
     echo "Usage: ./convert_and_split.sh <video.mp4>"
     exit 1
