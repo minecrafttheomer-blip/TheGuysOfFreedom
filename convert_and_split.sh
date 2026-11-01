@@ -33,7 +33,7 @@ ffmpeg -i "$input_file" \
     -ac 2 \
     -ar 22050 \
     -f segment \
-    -segment_time 180 \
+    -segment_time 170 \
     -reset_timestamps 1 \
     "$output_pattern"
 
